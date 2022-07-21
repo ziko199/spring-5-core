@@ -7,11 +7,21 @@ import ziko.spring.core.service.SpeakerServiceImpl;
 
 @Configuration
 public class AppConfig {
-
+/**
+ * Setter Injection
+ *
     @Bean(name = "speakerService")
     public SpeakerService getSpeakerService() {
         SpeakerServiceImpl service = new SpeakerServiceImpl();
         service.setRepository(getSpeakerRepository());
+        return service;
+    }
+*/
+
+// Construction Injection
+    @Bean(name = "speakerService")
+    public SpeakerService getSpeakerService() {
+        SpeakerServiceImpl service = new SpeakerServiceImpl(getSpeakerRepository());
         return service;
     }
 
