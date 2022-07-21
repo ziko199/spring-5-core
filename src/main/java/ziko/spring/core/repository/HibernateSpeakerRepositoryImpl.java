@@ -2,6 +2,7 @@ package ziko.spring.core.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 import ziko.spring.core.model.Speaker;
 
@@ -10,6 +11,7 @@ import java.util.Calendar;
 import java.util.List;
 
 @Repository("SpeakerRepository")
+@Profile("dev")
 public class HibernateSpeakerRepositoryImpl implements SpeakerRepository {
 
     @Autowired
