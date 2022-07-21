@@ -1,9 +1,5 @@
-import org.springframework.beans.factory.config.BeanDefinition;
-import org.springframework.context.annotation.*;
-import ziko.spring.core.repository.HibernateSpeakerRepositoryImpl;
-import ziko.spring.core.repository.SpeakerRepository;
-import ziko.spring.core.service.SpeakerService;
-import ziko.spring.core.service.SpeakerServiceImpl;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan({"ziko.spring.core"})

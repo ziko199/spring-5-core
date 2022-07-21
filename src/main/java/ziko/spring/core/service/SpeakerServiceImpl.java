@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import ziko.spring.core.model.Speaker;
 import ziko.spring.core.repository.SpeakerRepository;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 
 @Service("speakerService")
@@ -24,6 +25,11 @@ public class SpeakerServiceImpl implements SpeakerService {
     public SpeakerServiceImpl (SpeakerRepository speakerRepository) {
         System.out.println("SpeakerServiceImpl repository constructor");
         repository = speakerRepository;
+    }
+
+    @PostConstruct
+    private void initialize() {
+        System.out.println("we are called after the constructors");
     }
 
     @Override

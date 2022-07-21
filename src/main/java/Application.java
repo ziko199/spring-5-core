@@ -1,7 +1,6 @@
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import ziko.spring.core.service.SpeakerService;
-import ziko.spring.core.service.SpeakerServiceImpl;
 
 public class Application {
 
