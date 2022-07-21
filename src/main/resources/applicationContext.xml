@@ -8,6 +8,6 @@
           class="ziko.spring.core.repository.HibernateSpeakerRepositoryImpl" />
 
     <bean name="speakerService" class="ziko.spring.core.service.SpeakerServiceImpl" >
-        <property name="speakerRepository" ref="speakerRepository" />
+        <constructor-arg index="0" ref="speakerRepository" />
     </bean>
 </beans>
