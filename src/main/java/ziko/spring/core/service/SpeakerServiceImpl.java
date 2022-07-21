@@ -1,15 +1,20 @@
 package ziko.spring.core.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
 import ziko.spring.core.model.Speaker;
 import ziko.spring.core.repository.SpeakerRepository;
 
 import java.util.List;
 
+@Service("speakerService")
+@Scope(value = BeanDefinition.SCOPE_SINGLETON)
 public class SpeakerServiceImpl implements SpeakerService {
 
+    @Autowired
     private SpeakerRepository repository;
-
 
     public SpeakerServiceImpl () {
         System.out.println("SpeakerServiceImpl no args constructor");
@@ -27,7 +32,6 @@ public class SpeakerServiceImpl implements SpeakerService {
     }
 
     // Setter Injection
-    @Autowired
     public void setRepository(SpeakerRepository repository) {
         System.out.println("SpeakerServiceImpl setter");
         this.repository = repository;

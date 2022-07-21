@@ -1,10 +1,12 @@
 package ziko.spring.core.repository;
 
+import org.springframework.stereotype.Repository;
 import ziko.spring.core.model.Speaker;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository("SpeakerRepository")
 public class HibernateSpeakerRepositoryImpl implements SpeakerRepository {
 
     @Override
