@@ -20,13 +20,24 @@ public class AppConfig {
     }
 */
 
-// Construction Injection
+/**
+ * Construction Injection
+ *
     @Bean(name = "speakerService")
     @Scope(value = BeanDefinition.SCOPE_SINGLETON)
     public SpeakerService getSpeakerService() {
         SpeakerServiceImpl service = new SpeakerServiceImpl(getSpeakerRepository());
         return service;
     }
+*/
+
+
+@Bean(name = "speakerService")
+@Scope(value = BeanDefinition.SCOPE_SINGLETON)
+public SpeakerService getSpeakerService() {
+    SpeakerServiceImpl service = new SpeakerServiceImpl();
+    return service;
+}
 
     @Bean(name = "speakerRepository")
     public SpeakerRepository getSpeakerRepository() {
